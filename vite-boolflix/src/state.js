@@ -14,6 +14,7 @@ export const state = {
   movies: [],
 };
 
+// Film popolari (DEBUGGING)
 export async function fetchPopularMovies() {
   try {
     const response = await axiosInstance.get('movie/popular');
@@ -23,3 +24,18 @@ export async function fetchPopularMovies() {
     return [];
   }
 }
+
+// Search Movie - Milestone 1
+export async function searchMoviesByTerm(searchTerm) {
+    try {
+      const response = await axiosInstance.get('search/movie', {
+        params: {
+          query: searchTerm,
+        },
+      });
+      return response.data.results;
+    } catch (error) {
+      console.error('Errore durante la ricerca dei film:', error);
+      return [];
+    }
+  }

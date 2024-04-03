@@ -1,19 +1,19 @@
 <script>
 
-import PopularMovies from './PopularMovies.vue';
+import SearchMovies from './SearchMovies.vue';
 
 
 export default {
     name: 'AppMain',
     components: {
-        PopularMovies
+        SearchMovies
     }
 }
 </script>
 
 <template>
 
-    <PopularMovies />
+    <SearchMovies />
 
 </template>
 
