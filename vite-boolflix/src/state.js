@@ -39,3 +39,18 @@ export async function searchMoviesByTerm(searchTerm) {
       return [];
     }
   }
+
+  // Search TV Series - Milestone 2
+  export async function searchTVShowsByTerm(searchTerm) {
+    try {
+        const response = await axiosInstance.get('search/tv', {
+            params: {
+                query: searchTerm
+            }
+        });
+        return response.data.results;
+    } catch (error) {
+        console.error('Errore nella ricerca delle serie TV:', error);
+        return [];
+    }
+}
