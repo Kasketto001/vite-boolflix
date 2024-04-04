@@ -1,0 +1,210 @@
+/* 
+=====================
+    FONT
+=====================
+*/
+
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+
+
+body {
+
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    
+
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+}
+/* 
+=====================
+    CSS RESET
+=====================
+*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* 
+=====================
+    VARS
+=====================
+*/
+
+:root { 
+--boolflix-brand-color-red: #e50914;
+--boolflix-brand-color-black: #221f1f;
+--boolflix-brand-color-white: #f5f5f1;
+
+
+}
+
+/* 
+=====================
+    CONTAINERS
+=====================
+*/
+.container_small {
+    width: 60%;
+    max-width: 1000px;
+    margin: auto;
+}
+.container_regular {
+    width: 70%;
+    max-width: 1100px;
+    margin: auto;
+}
+.container_large {
+    width: 98%;
+    max-width: 2500px;
+    margin: auto;
+}
+
+/* 
+=====================
+    CSS UTILITY
+=====================
+*/
+/* REGULAR HEIGHT */
+.height_const {
+
+    height: 80px;
+}
+
+/* HEIGHT SMALL */
+.height_small_const {
+
+    height: 50px;
+}
+/* 
+=====================
+    RESPONSIVE GRID
+=====================
+*/
+
+.row {
+    display: flex;
+
+}
+
+.col-1 {
+    width: calc((100% / 12) * 1);
+}
+
+.col-2 {
+    width: calc((100% / 12) * 2);
+}
+
+.col-3 {
+    width: calc((100% / 12) * 3);
+}
+
+.col-4 {
+    width: calc((100% / 12) * 4);
+}
+
+.col-5 {
+    width: calc((100% / 12) * 5);
+}
+
+.col-6 {
+    width: calc((100% / 12) * 6);
+}
+
+.col-7 {
+    width: calc((100% / 12) * 7);
+}
+
+.col-8 {
+    width: calc((100% / 12) * 8);
+}
+
+.col-8 {
+    width: calc((100% / 12) * 11);
+}
+
+.col-12 {
+    width: 100%;
+}
+
+header {
+
+  background-color: var(--boolflix-brand-color-black);
+  padding: 20px 0;
+  
+}
+
+.navbar-center-contents {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+nav .row {
+display: flex;
+justify-content: center;
+align-items: center;
+}
+
+.brand_logo {
+  font-weight: 700;
+  text-decoration: none;
+  color: var(--boolflix-brand-color-red);
+  font-size: 26px;
+}
+.search_bar {
+  background-color: #352f2f;
+  border-radius: 25px;
+  width: 100%;
+  display: flex;
+}
+.search_bar button {
+  align-self: right;
+  border-style: none;
+  padding: 20px;
+  border-radius: 50%;
+  cursor: pointer;
+  background-color: var(--boolflix-brand-color-red);
+  color:var(--boolflix-brand-color-white)
+}
+
+.search_bar button:hover {
+  color: var(--boolflix-brand-color-red);
+  background-color: var(--boolflix-brand-color-white);
+  transition: 0.3s;
+}
+nav input {
+  font-family: 'Poppins', sans-serif;
+
+  padding-left: 20px;
+  padding: 15px;
+  width: 100%;
+  background-color: #221f1f00;
+  border-style: none;
+  outline: none;
+  color: var(--boolflix-brand-color-white);
+  font-size: 15px;
+}
+
+nav input::placeholder {
+  font-family: 'Poppins', sans-serif;
+}
+
+.links a {
+  text-decoration: none;
+  color: white;
+}
+.links {
+  display: flex;
+  gap: 10px;
+}

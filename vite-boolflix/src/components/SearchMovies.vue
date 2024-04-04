@@ -1,8 +1,8 @@
 <template>
-    <div>
+    <div class="search_bar">
         <input type="text" v-model="searchTerm" placeholder="Cerca film o serie TV...">
-        <button @click="searchMedia">Cerca</button>
-
+        <button @click="searchMedia"><i class="fa-solid fa-search"></i></button>
+    
         <div v-if="searchResults.length > 0">
             <h2>Risultati della ricerca:</h2>
             <div v-for="media in searchResults" :key="media.id">
@@ -12,12 +12,9 @@
                 <img :src="getFlagImageUrl(media.original_language)" alt="Bandiera lingua">
                 <p><strong>Voto:</strong> {{ getRating(media.vote_average) }}</p>
                 <div class="rating">
-                    <i v-for="n in getRating(media.vote_average)" :key="n" class="fa-solid fa-star"></i>
+                    <i v-for="n in 5" :key="n" :class="{ 'fa-solid': n <= getRating(media.vote_average), 'fa-regular': n > getRating(media.vote_average), 'fa-star': true }"></i>
                     <hr>
                 </div>
-
-
-
             </div>
         </div>
     </div>
@@ -57,8 +54,9 @@ export default {
     }
 };
 </script>
-<style>
+<style >
+
 .rating i {
-    color: #FFD700;
+    color: #FFD700; 
 }
 </style>
