@@ -2,7 +2,7 @@
     <div>
         <input type="text" v-model="searchTerm" placeholder="Cerca film o serie TV...">
         <button @click="searchMedia">Cerca</button>
-    
+
         <div v-if="searchResults.length > 0">
             <h2>Risultati della ricerca:</h2>
             <div v-for="media in searchResults" :key="media.id">
@@ -10,8 +10,14 @@
                 <img :src="getCoverImageUrl(media.poster_path)" alt="Copertina media">
                 <p><strong>Titolo Originale:</strong> {{ media.original_title || media.original_name }}</p>
                 <img :src="getFlagImageUrl(media.original_language)" alt="Bandiera lingua">
-                <p><strong>Voto:</strong> {{ media.vote_average }}</p>
-                <hr>
+                <p><strong>Voto:</strong> {{ getRating(media.vote_average) }}</p>
+                <div class="rating">
+                    <i v-for="n in getRating(media.vote_average)" :key="n" class="fa-solid fa-star"></i>
+                    <hr>
+                </div>
+
+
+
             </div>
         </div>
     </div>
@@ -38,11 +44,21 @@ export default {
         };
 
         const getCoverImageUrl = (posterPath) => {
-            if (!posterPath) return ''; 
+            if (!posterPath) return '';
             return `https://image.tmdb.org/t/p/w342/${posterPath}`;
         };
 
-        return { searchTerm, searchResults, searchMedia, getFlagImageUrl, getCoverImageUrl };
+        const getRating = (voteAverage) => {
+
+            return Math.ceil(voteAverage / 2);
+        };
+
+        return { searchTerm, searchResults, searchMedia, getFlagImageUrl, getCoverImageUrl, getRating };
     }
 };
 </script>
+<style>
+.rating i {
+    color: #FFD700;
+}
+</style>

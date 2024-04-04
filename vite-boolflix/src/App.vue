@@ -19,5 +19,5 @@ export default {
 </template>
 
 <style>
-
+@import "@fortawesome/fontawesome-free/css/all.min.css";
 </style>
