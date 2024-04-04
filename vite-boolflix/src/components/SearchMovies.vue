@@ -11,6 +11,7 @@
                 <p><strong>Titolo Originale:</strong> {{ media.original_title || media.original_name }}</p>
                 <img :src="getFlagImageUrl(media.original_language)" alt="Bandiera lingua">
                 <p><strong>Voto:</strong> {{ media.vote_average }}</p>
+                <hr>
             </div>
         </div>
     </div>
